@@ -1,0 +1,16 @@
+@startuml "observer pattern"
+class subject{
+- 통보할 관찰 대상
++ 등록함수()
++ 삭제함수()
++ 통보함수()(observer의 콜백함수를 포함)
+}
+class observer{
+    +콜백함수()
+}
+subject -right-> observer
+
+concrete_subject -up-|> subject
+concrete_observer -up-|> observer
+
+@enduml
