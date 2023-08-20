@@ -8,7 +8,7 @@ class subject{
 class observer{
     +콜백함수()
 }
-subject -right-> observer
+subject .right.> observer
 
 concrete_subject -up-|> subject
 concrete_observer -up-|> observer
