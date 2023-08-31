@@ -1,0 +1,38 @@
+@startuml "builder pattern"
+class "client"{
+}
+
+class "builder_interface"{
+    - partsA
+    - partsB
+    - partsC
+    + {abstract} setPartsA()
+    + {abstract} setPartsB()
+    + {abstract} setPartsC()
+}
+
+class "builder_concrete"{
+    + builder_concrete()
+    + setPartsA()
+    + setPartsB()
+    + setPartsC()
+    + build()
+}
+
+class "director"{
+    -builder_concrete
+    +director(builder_concrete)
+    +buildAA()
+    +buildBB()
+}
+
+class "result"{
+
+}
+
+
+"builder_interface" <|-down- "builder_concrete"
+"director" o-right-> "builder_interface"
+client -up-> "director"
+"builder_concrete" -right-> result
+@enduml
