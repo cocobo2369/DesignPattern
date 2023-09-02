@@ -1,6 +1,6 @@
 @startuml "observer pattern"
 class "subject\n(=observable)"{
-- 통보할 관찰 대상
+- observer
 + 등록함수()
 + 삭제함수()
 + 통보함수()(observer의 콜백함수를 포함)
