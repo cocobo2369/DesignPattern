@@ -1,0 +1,37 @@
+@startuml
+class product
+class product1
+class product2
+class client{
+    - product1
+    - product2
+}
+
+
+class "abstract factory"{
+    + virtual create()
+}
+note left of "abstract factory"::create
+  factory method
+end note
+
+class "concrete factory1"{
+    + override create()
+}
+class "concrete factory2"{
+    + override create()
+}
+product <|-down- product1
+product <|-down- product2
+
+
+client -left-> "abstract factory"
+"abstract factory" <|-down- "concrete factory2"
+"abstract factory" <|-down- "concrete factory1"
+
+
+client -right-> product
+"concrete factory2".right>product2
+"concrete factory1".right>product1
+
+@enduml
